@@ -1,7 +1,8 @@
 package com.project.moviebooking.controller;
 
-import com.mscomm.movieservice.entity.Theatre;
-import com.mscomm.movieservice.service.TheatreService;
+
+import com.project.moviebooking.entity.Theatre;
+import com.project.moviebooking.service.TheatreService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;

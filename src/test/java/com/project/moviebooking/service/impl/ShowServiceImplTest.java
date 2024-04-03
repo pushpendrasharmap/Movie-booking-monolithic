@@ -1,7 +1,8 @@
 package com.project.moviebooking.service.impl;
 
-import com.mscomm.movieservice.entity.Show;
-import com.mscomm.movieservice.repository.ShowRepository;
+
+import com.project.moviebooking.entity.Show;
+import com.project.moviebooking.repository.ShowRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;

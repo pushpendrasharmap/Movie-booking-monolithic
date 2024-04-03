@@ -1,7 +1,7 @@
 package com.project.moviebooking.controller;
 
-import com.mscomm.movieservice.entity.Show;
-import com.mscomm.movieservice.service.ShowService;
+import com.project.moviebooking.entity.Show;
+import com.project.moviebooking.service.ShowService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
@@ -44,5 +44,22 @@ class ShowControllerTest {
         assertEquals(HttpStatus.OK, response.getStatusCode());
         assertEquals(shows, response.getBody());
         verify(showService, times(1)).getShowsByMovieIdAndTheatreId(movieId, theatreId);
+    }
+
+    @Test
+    public void testSaveShow() {
+        // Mock data
+        Show show = new Show(); // Create a mock Show object
+        Show savedShow = new Show(); // Create a mock saved Show object
+
+        // Mock service method
+        when(showService.saveShow(show)).thenReturn(savedShow);
+
+        // Call controller method
+        ResponseEntity<Show> response = showController.saveShow(show);
+
+        // Verify response
+        assertEquals(HttpStatus.CREATED, response.getStatusCode());
+        assertEquals(savedShow, response.getBody());
     }
 }
